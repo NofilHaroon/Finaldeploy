@@ -1,0 +1,104 @@
+/* h1{
+    padding: auto;
+    margin: auto;
+    font-weight: bold;
+    font-size: 100px;
+} */
+
+/* h2{
+    font-size: 50px;
+    text-align: center;
+} */
+
+/* h1{
+    font-weight: bold;
+    font-size: 150px;
+    padding: 3%;
+}
+
+h2{
+    font-size: 50px;
+} */
+/* .fa-tools{
+    color: lightsalmon;
+} */
+
+
+
+.landing-text{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    /* text-decoration-color: white; */
+    /* color: white; */
+    /* font-weight: bold;    */
+    /* font-size: 20px; */
+   }
+   
+   .landing-text h1{
+       font-size: 700%;
+       font-weight: 700;
+       padding: 2%;
+   }
+   
+   .landing-text h2{
+       font-size: 200%;
+       font-weight: 700;
+   }
+   
+   .padding{
+       padding: 80px 0;
+   }
+   .padding img{
+       width: 100%;
+   }
+   
+   .padding h4{
+       font-weight: 700;
+       font-size: 150%;
+   }
+   
+   /* .padding p{
+       font-size: 100%;
+   } */
+   
+   .padding img{
+       width: 100%;
+   }
+   
+   .padding h2{
+       font-weight: 700;
+       font-size: 200%;
+   }
+   
+   .lead .btn{
+       font-size: 150%;
+   }
+   
+   @media(max-width: 768px){
+       .landing-text h1{
+           font-size: 300%;
+       }
+       .lead .btn{
+           font-size: 100%;
+       }
+       .padding h2{
+           font-weight: 700;
+           font-size: 120%;
+       }
+       .padding h4{
+           font-weight: 700;
+           font-size: 120%;
+       }
+       .padding p{
+           font-size: 100%;
+       }
+       .padding img{
+           min-width: 50%;
+           
+           /* padding-left: 25%; */
+       }
+       /* .padding img{
+           width:50%
+       } */
+   }

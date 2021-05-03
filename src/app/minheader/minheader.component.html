@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+
+    <a class="navbar-brand">Categories</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+            <a class="nav-link" aria-current="page" style="text-decoration:none; color:black" href="../listing">All</a>
+            <li *ngFor="let dataItem of ServiceList" class="nav-item">
+                <a class="nav-link" aria-current="page" style="text-decoration:none; color:black"
+                    href="{{dataItem.ServiceName}}">{{dataItem.ServiceName}}</a>
+            </li>
+
+        </div>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <!-- <mat-label>Select Date/Time for Meeting</mat-label> -->
+        <input formControlName="" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <form class="d-flex ">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit" style="color: black;"><i
+                class="fa fa-search fa-xs"></i></button>
+    </form>
+</nav>

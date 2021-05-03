@@ -1,0 +1,40 @@
+/* .navbar-light{
+    background-color: lightsteelblue;
+} */
+
+.navbar{
+    background-color: #21081a;
+    padding: 1% 0;
+    text-decoration-color: white;
+    font-size: 1.2em;
+}
+
+.navbar-brand{
+    min-width: auto; 
+    padding: 0 15px 5px;
+    font-size: 1.2em;
+    /* /* height: auto; */
+}
+
+.navbar-default .navbar-nav li a .dropdown-menu, .nav-link, :active{
+    color: #d8d5d5;
+    background-color: #21081a;
+    /* text-decoration: none ; */
+    /* padding: 10%; */
+}
+.nav-item{
+    color: #d8d5d5;
+    /* background-color: #21081a; */
+}
+.navbar-default .navbar-nav li a:hover,.navbar-default .navbar-nav li a:active{
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar h2{
+    color: white;
+    font-weight: 700;
+    padding-right: 5%;
+    padding-top: 1%;
+
+}

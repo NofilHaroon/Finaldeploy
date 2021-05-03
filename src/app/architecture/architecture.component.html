@@ -1,0 +1,56 @@
+<!-- <div id="guide"> -->
+    <div id="architechture">
+        <div class="landing-text ">
+            <h1>Services</h1>
+            <h2>Avail 10% discounts</h2>
+    
+        </div>
+    </div>
+    
+    <main class="mt-5">
+        <div class="container">
+            <app-minheader></app-minheader>
+            <!-- LISTING SECTION -->
+            <section class="text-center mb-4">
+    
+    
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4" *ngFor="let dataItem of Listinginfo_i | paginate: {id: 'listing_pagination',
+                    itemsPerPage: 9,
+                    currentPage: page,
+                    totalItems: totalRecords}">
+    
+                        <div class="card" >
+                            <p class="text4">Category: {{dataItem.Category}}</p>
+                            <div class="inner">
+                                <img class="card-img-top" src={{Path_Thumbnail}}{{dataItem.Thumbnail}} alt="">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title"><a>{{dataItem.Title}}</a></h4>
+                                <!-- Text -->
+                                <p class="card-text">{{dataItem.Description}}</p>
+                                <!-- Rating --> 
+                                <p class="card-text">Ratings: {{dataItem.Rating}}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+    
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary" (click) = "send_info(dataItem)">View</button>
+                        </div>
+                    
+                    </div>
+                </div>
+    
+                <div>
+                    <pagination-controls id="listing_pagination" (pageChange)="page = $event "></pagination-controls>
+                </div>
+    
+            </section>
+        </div>
+    </main>
+    

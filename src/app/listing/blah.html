@@ -1,0 +1,119 @@
+<!-- <div id="guide"> -->
+    <div id="architechture">
+        <div class="landing-text ">
+            <h1>Services</h1>
+            <h2>Avail 10% discounts</h2>
+    
+        </div>
+    </div>
+    <!-- Current Date : {{Today | date}} -->
+    <main class="mt-5">
+        <div class="container">
+            <!-- <app-minheader></app-minheader> -->
+            <!-- LISTING SECTION -->
+            <label >Choose a Service Category: </label>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select a service
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button type="button" (click)="onCategoryFilterClear()">All</button>
+                    <li *ngFor = "let dataItem of ServiceList">
+                        <button type="button" (click)= "getServ(dataItem.ServiceName)">{{dataItem.ServiceName}}</button>
+                    </li>
+                    
+                    <!-- <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a> -->
+                    </div>
+                </div>
+                <!-- <label> Choose Category </label>
+                    <input [(ngModel)]='Category'>
+                    <button (click)="onCategoryFilter()">Search</button>
+                    <button (click)="onCategoryFilterClear()">Clear</button> -->
+                    
+            <label >Choose date range: </label>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter a date range</mat-label>
+                    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                      <input matStartDate formControlName="start" placeholder="Start date">
+                      <input matEndDate formControlName="end" placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  
+                    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                  </mat-form-field>
+                  <button (click)="clearfilter()">Clear</button>
+                  <button (click)="onDate()">Search</button>
+                  <!-- <p>Selected range: {{range.value | json}}</p> -->
+                  
+            </div>
+    
+    
+            <section class="text-center mb-4">
+    
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4" *ngFor="let dataItem of Listinginfo|filter: SearchCat :'Category' | paginate: {id: 'listing_pagination',
+                    itemsPerPage: 9,
+                    currentPage: page,
+                    totalItems: totalRecords}">
+    
+                        <!-- <div class="col-lg-4 col-md-12 mb-4" *ngFor="let dataItem of Listinginfo | paginate: {id: 'listing_pagination',
+                    itemsPerPage: 9,
+                    currentPage: page,
+                    totalItems: totalRecords}"> -->
+    
+                        <div class="card">
+                            <p class="text4">Category: {{dataItem.Category}}</p>
+                            <div class="inner">
+                                <img class="card-img-top" src={{Path_Thumbnail}}{{dataItem.Thumbnail}} alt="">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title"><a>{{dataItem.VendorName}}</a></h4>
+                                <!-- Text -->
+                                <p class="card-text">{{dataItem.Description}}</p>
+                                <!-- Rating -->
+                                <p class="card-text">Ratings: {{dataItem.Rating}}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+    
+                            </div>
+    
+                            <button type="button" class="btn btn-primary" (click)="send_info(dataItem)">Book</button>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <div>
+                    <pagination-controls id="listing_pagination" (pageChange)="page = $event "></pagination-controls>
+                </div>
+    
+            </section>
+        </div>
+    </main>
+    
+    <main class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-md-push-3" *ngFor="let dataItem of Listinginfo|filter: SearchCat :'Category' | paginate: {id: 'listing_pagination',
+                itemsPerPage: 9,
+                currentPage: page,
+                totalItems: totalRecords}"><img class="card-img-top" src={{Path_Thumbnail}}{{dataItem.Thumbnail}} alt=""></div>
+                <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+              </div>
+        </div>
+    </main>
+    
+    <!-- <div className="row">
+        <div className="offset-3 col-9"></div>
+        {this.state.products.map((item, index) => <Product key={index} slug={item.slug} image={item.image} name={item.name} price={item.price} description={item.description} created={item.created}/>)}
+        <h4 style={{ color: "#A52A2A" }}>No Results Found</h4>
+      </div> -->

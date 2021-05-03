@@ -1,0 +1,62 @@
+<nav class="navbar fixed-top navbar-expand-lg ">
+  <a class="navbar-brand text-white" href="#">MIMMAR - Let's Build</a>
+  <!-- <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" style="color: white;"></span>
+  </button> -->
+  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon navbar-dark" ></span>
+</button>
+
+  <!-- <a class="navbar-brand" href="#"> <img  src = "assets\newlogo.png"></a>
+  <h2> MIMMAR</h2>  -->
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+                    
+
+      
+      <li *ngFor = "let items of menuItems" class="active">
+        <a class="nav-link" href="{{items.linkUrl}}"> {{items.linkname}} <span class="sr-only">(current)</span></a>
+      </li>
+      <div class="btn-group">
+        <button type="button" class="btn text-white" [routerLink]="'../listing'">Book</button>
+
+        <!-- <button type="button" class="btn  dropdown-toggle dropdown-toggle-split" style="color:white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="visually-hidden"></span>
+        </button> -->
+        <!-- <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div> -->
+
+        <!-- <div class="dropdown-menu">
+          <li *ngFor = "let dataItem of ServiceList" class="nav-item">
+            <a class="active" style="text-decoration:none; color:black" href="{{dataItem.ServiceName}}">{{dataItem.ServiceName}}</a>
+          </li>
+        </div> -->
+      
+      </div>
+
+
+      <!-- <li class="nav-item dropdown"> -->
+        <!-- <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a> -->
+
+        <!-- <ahref="Architecture"> Architecture</a> -->
+        <!-- <app-show-ser></app-show-ser>
+      </li> -->
+    
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search fa-xs"></i></button>
+    </form>
+    
+  </div>
+</nav> 

@@ -1,0 +1,124 @@
+<!-- <div id="guide"> -->
+<div id="architechture">
+    <div class="landing-text ">
+        <h1>Services</h1>
+        <h2>Avail 10% discounts</h2>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Choose Category</th>
+                    <th>Pick Date Range</th>
+                    <!-- <th>Email</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select a service
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button type="button" (click)="onCategoryFilterClear()">All</button>
+                                <li *ngFor="let dataItem of ServiceList">
+                                    <button type="button"
+                                        (click)="getServ(dataItem.ServiceName)">{{dataItem.ServiceName}}</button>
+                                </li>
+
+                                <!-- <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> -->
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter a date range</mat-label>
+                            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                                <input matStartDate formControlName="start" placeholder="Start date">
+                                <input matEndDate formControlName="end" placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+
+                            <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date
+                            </mat-error>
+                            <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date
+                            </mat-error>
+                        </mat-form-field>
+
+                    </td>
+                    <td>
+                        <!-- <button (click)="clearfilter()">Clear</button>
+                        <button (click)="onDate()">Search</button> -->
+                        <button type="button" class="btn btn-primary" (click)="clearfilter()" style="margin: 1%;">Clear</button>
+                        <button type="button" class="btn btn-primary" (click)="onDate()" style="margin: 1%;">Search</button>
+                        <p *ngIf="dikhao">Selected range: {{range.value.start | date}} to {{range.value.end | date}}</p>
+                    </td>
+                    <!-- <td>john@example.com</td> -->
+                </tr>
+                <!-- <tr>
+                    <td>Mary</td>
+                    <td>Moe</td>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>Dooley</td>
+                    <td>july@example.com</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container ">
+        <div class="row text-center text-white mb-5">
+            <div class="col-lg-7 mx-auto">
+                <h1 class="display-4">Product List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto" *ngFor="let dataItem of alldata|filter: SearchCat :'ListingId__Category' | paginate: {id: 'listing_pagination',
+        itemsPerPage: 6,
+        currentPage: page,
+        totalItems: totalRecords}">
+                <!-- List group-->
+                <ul class="list-group shadow">
+                    <!-- list group item-->
+                    <li class="list-group-item">
+                        <!-- Custom content-->
+                        <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                            <div class="media-body order-2 order-lg-1">
+                                <h5 class="mt-0 font-weight-bold mb-2">{{dataItem.ListingId__Title}}</h5>
+                                <p class="font-italic text-muted mb-0 small">{{dataItem.ListingId__Description}}</p>
+                                <p class="font-italic text-muted mb-0 small">Price : {{dataItem.ListingId__Charges}}</p>
+                                <p class="font-italic text-muted mb-0 small"> Date: {{dataItem.ListingbookingID__Date}}</p>
+                                <p class="font-italic text-muted mb-0 small"> Time Slot: {{dataItem.Time}}</p>
+
+                                <div class="d-flex align-items-center justify-content-between mt-1">
+                                    <!-- <h6 class="font-weight-bold my-2">₹64,999</h6> -->
+                                    <button type="button" class="btn btn-primary"
+                                        (click)="send_info(dataItem)">Book</button>
+                                </div>
+                            </div><img src={{Path_Thumbnail}}{{dataItem.ListingId__Thumbnail}} alt="Generic placeholder image"
+                                width="200" class="ml-lg-5 order-1 order-lg-2">
+                        </div> <!-- End -->
+                    </li> <!-- End -->
+
+                </ul> <!-- End -->
+            </div>
+        </div>
+        <div>
+            <ul style="width: fit-content; margin: auto;">
+            <pagination-controls id="listing_pagination" (pageChange)="page = $event "></pagination-controls>
+            </ul>
+        </div>
+    </div>

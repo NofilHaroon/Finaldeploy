@@ -1,0 +1,121 @@
+<form [formGroup]="profileForm">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+
+            <div class="col-md-6" style="margin: auto;">
+
+                <!-- Billing Details -->
+
+                <!-- <app-minheader></app-minheader> -->
+                <div>
+                    <mat-card style="width: 75% ; margin-top: 25%;">
+                        <h4><strong> Name : </strong> {{lastbuyer.BuyerName}}</h4>
+                        <h4><strong> Contact : </strong>{{lastbuyer.BuyerContact}}</h4>
+                        <h4><strong> Address : </strong>{{lastbuyer.BuyerAddress}}</h4>
+                        <h4><strong> Email : </strong>{{lastbuyer.BuyerEmail}}</h4>
+                        <h4><strong> Date : </strong>{{info.ListingbookingID__Date}}</h4>
+                        <h4><strong> Timeslot chosen : </strong>{{info.Time}}</h4>
+
+
+                    </mat-card>
+                </div>
+                <div>
+                    <!-- <div class="caption">
+
+                    </div> -->
+                    <mat-card style="width: 75% ; margin-top: 2px; margin-bottom: 100%;">
+                        <button mat-button color="primary" style="width: 100%;" type="button"
+                            (click)="pay(info.ListingId__Charges - info.ListingId__Charges * 0.1)">Pay
+                            {{info.ListingId__Charges - info.ListingId__Charges * 0.1 | currency : 'PKR'}}</button>
+                        <!-- <button mat-button color="primary" style="width: 100%;">Stripe</button> -->
+
+                    </mat-card>
+                </div>
+
+
+
+
+                <!-- /Billing Details -->
+            </div>
+
+            <!-- Order Details -->
+
+            <div class="col-md-6 ">
+                <div class="row" style="margin-top: 25%;">
+                    <div class="section-title">
+                        <!-- <h3 class="title">Your Order</h3> -->
+                        <div class=" text-center"><strong>Vendor Details</strong></div>
+
+
+                    </div>
+                </div>
+                <div class="row detail-content">
+                    <div class="text1">
+                        <span>Category - </span>
+                        <span>{{info.ListingId__Category}}</span>
+                    </div>
+
+                    <div class="text3">
+                        {{info.ListingId__Title}}
+                    </div>
+
+                    <!-- <div class="text2">
+          {{info.Description}}
+        </div> -->
+
+                </div>
+                <div class="row">
+                    <div class="row detail-slider">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="assets\Cards\{{info.ListingId__Thumbnail}}"
+                                        alt="First slide">
+                                </div>
+
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- <div class="text4">
+                DESCRIPTION
+              </div>
+              <div class="text5">
+                {{info.Description}}
+              </div> -->
+
+                    </div>
+                    <div class="row">
+                        <div class="text4">
+                            Original Price : {{info.ListingId__Charges}}
+                            <div class="text4">
+                                Price after {{0.1 *100 }}% Discount : {{info.ListingId__Charges -
+                                info.ListingId__Charges *
+                                0.1}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>

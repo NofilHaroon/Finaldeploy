@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; width: 100%;}
+/* body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> */
+
+#home{
+    background: url(assets/background2.png) no-repeat center center fixed;
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    /* opacity: 0.8; */
+}
+
+#fixed{
+    background: url(assets/background1.png) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+#guide{
+    background: url(assets/guide1.jpg) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+#interior{
+    
+    background: url(assets/interiorguide.jpg) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+#book{
+    
+    background: url(assets/architechtureguide.png) no-repeat center center fixed;
+    display: table;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    opacity: 1;
+}
+
+
+
+
+#architechture{
+    
+    background: url(assets/architechtureguide.png) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.checked{
+    color: orange;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
